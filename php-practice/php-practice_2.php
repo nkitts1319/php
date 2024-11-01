@@ -1,6 +1,5 @@
 <?php
 // Q1 tic-tac問題
-<?php
 echo "1から100までのカウントを開始します\n\n";
 
 for ($i = 1; $i <= 100; $i++) {
@@ -14,10 +13,8 @@ for ($i = 1; $i <= 100; $i++) {
         echo "$i\n";
     }
 }
-?>
-// Q2 多次元連想配列
-Q2-1
-<?php
+
+// Q2-1 多次元連想配列
 $personalInfos = [
     [
         'name' => 'Aさん',
@@ -37,10 +34,9 @@ $personalInfos = [
 ];
 
 echo $personalInfos[1]['name'] . "の電話番号は" . $personalInfos[1]['tel'] . "です。";
-?>
 
-Q2-2
-<?php
+// Q2-2
+
 $personalInfos = [
     [
         'name' => 'Aさん',
@@ -59,17 +55,12 @@ $personalInfos = [
     ],
 ];
 
-$index = 1;
-
-foreach ($personalInfos as $info) {
+foreach ($personalInfos as $index => $info) {
+    $index++; // 1番目から始まるように
     echo $index . "番目の" . $info['name'] . "のメールアドレスは" . $info['mail'] . "で、電話番号は" . $info['tel'] . "です。\n";
-    $index++;
 }
-?>
 
-Q2-3
-<?php
-
+// Q2-3
 $personalinfos = [
     [
         "name" => "Aさん",
@@ -94,10 +85,8 @@ foreach ($personalinfos as $key => $value) {
 }
 
 var_dump($personalinfos);
-?>
-// Q3 オブジェクト-1
-<?php
 
+// Q3 オブジェクト-1
 class Student
 {
     public $studentId;
@@ -123,10 +112,8 @@ class Student
 $student = new Student(120, '山田');
 
 $student->displayInfo();
-?>
-// Q4 オブジェクト-2
-<?php
 
+// Q4 オブジェクト-2
 class Student
 {
     public $studentId;
@@ -151,26 +138,10 @@ class Student
 
 $yamada = new Student(120, '山田');
 $yamada->attend('PHP');
-?>
+
 // Q5 定義済みクラス
-<?php
+echo (new DateTime())->modify('-1 month')->format('Y-m-d');
 
-$current_date = new DateTime();
-
-$one_month_ago = $current_date->modify('-1 month');
-
-echo $one_month_ago->format('Y-m-d');
-?>
 // Q5 定義済みクラス-2
-<?php
-
-$today = new DateTime();
-
-$past_date = new DateTime('1992-04-25');
-
-$interval = $today->diff($past_date);
-
-$total_days = $interval->days;
-
-echo "あの日から{$total_days}日経過しました。";
+echo "あの日から" . (new DateTime())->diff(new DateTime('1992-04-25'))->days . "日経過しました。";
 ?>
