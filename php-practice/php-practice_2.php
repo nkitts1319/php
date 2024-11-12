@@ -10,7 +10,7 @@ for ($i = 1; $i <= 100; $i++) {
     } elseif ($i % 5 === 0) {
         echo "tac\n";
     } else {
-        echo "$i\n";
+        echo "{$i}\n";
     }
 }
 
@@ -33,10 +33,9 @@ $personalInfos = [
     ],
 ];
 
-echo $personalInfos[1]['name'] . "の電話番号は" . $personalInfos[1]['tel'] . "です。";
+echo "{$personalInfos[1]['name']}の電話番号は{$personalInfos[1]['tel']}です。";
 
 // Q2-2
-
 $personalInfos = [
     [
         'name' => 'Aさん',
@@ -57,7 +56,7 @@ $personalInfos = [
 
 foreach ($personalInfos as $index => $info) {
     $index++; // 1番目から始まるように
-    echo $index . "番目の" . $info['name'] . "のメールアドレスは" . $info['mail'] . "で、電話番号は" . $info['tel'] . "です。\n";
+    echo "{$index}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
 }
 
 // Q2-3
@@ -110,7 +109,6 @@ class Student
 }
 
 $student = new Student(120, '山田');
-
 $student->displayInfo();
 
 // Q4 オブジェクト-2
